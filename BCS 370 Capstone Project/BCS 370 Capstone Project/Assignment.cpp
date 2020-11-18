@@ -27,6 +27,14 @@ public:
         day = 0;
         daysUntil = 0;
     }
+    Assignment(string c, string d, int m, int D, int dD)
+    {
+        this->course = c;
+        this->description = d;
+        this->month = m;
+        this->day = D;
+        this->daysUntil = dD;
+    }
        
     
     void addAssignment()
