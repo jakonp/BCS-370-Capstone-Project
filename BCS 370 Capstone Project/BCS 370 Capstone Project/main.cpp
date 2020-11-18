@@ -28,5 +28,8 @@ int main() {
     
     math.updateAssignment();
     math.displayAssignment();
+    
+    Assignment english;
+    english.displayAssignment();
    
 }
