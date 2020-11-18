@@ -11,6 +11,14 @@
 
 using namespace std;
 
+
+struct date
+{
+    int d,m,y;
+    
+};
+
+
 class Assignment
 {
 private:
@@ -18,6 +26,7 @@ private:
     string description;
     int month;
     int day;
+    int year;
     int daysUntil = this->getDaysUntilDue();
     bool complete;
 public:
@@ -27,15 +36,17 @@ public:
         description = "Unassigned";
         month = 0;
         day = 0;
+        year = 0;
         daysUntil = 0;
         complete = false;
     }
-    Assignment(string c, string d, int m, int D, int dD, bool comp)
+    Assignment(string c, string d, int m, int D, int y, int dD, bool comp)
     {
         this->course = c;
         this->description = d;
         this->month = m;
         this->day = D;
+        this->year = y;
         this->daysUntil = dD;
         this->complete = comp;
     }
@@ -51,12 +62,14 @@ public:
         cin >> this->month;
         cout << "\nEnter day due: ";
         cin >> this->day;
+        cout << "\nEnter the year due: ";
+        cin >> this->year;
     }
     void updateAssignment()
     {
         int choice;
         cout << "What would you like to change?";
-        cout << "\n1. Course\n2. Description\n3. Month Due\n4. Day Due\n5. Update Completion\n6. Exit" << endl;
+        cout << "\n1. Course\n2. Description\n3. Month Due\n4. Day Due\n5. Year Due\n6. Update Completion\n7. Exit" << endl;
         cin >> choice;
         switch(choice)
         {
@@ -94,6 +107,14 @@ public:
             }
             case 5:
             {
+                cout << "What is the new year due?: ";
+                int newYear;
+                cin >> newYear;
+                this->year = newYear;
+                break;
+            }
+            case 6:
+            {
                 cout << "Has this assignment been completed?: \n1. YES\n2. NO\n";
                 int choice;
                 cin >> choice;
@@ -107,7 +128,7 @@ public:
                 }
                 break;
             }
-            case 6:
+            case 7:
             {
                 break;
             }
@@ -161,6 +182,11 @@ public:
     bool getCompletion()
     {
         return complete;
+    }
+    
+    int getYear()
+    {
+        return year;
     }
     
 };

@@ -19,6 +19,7 @@ struct tm *aTime = localtime(&theTime);
 
 int day = aTime->tm_mday;
 int month = aTime->tm_mon + 1;
+int year = aTime->tm_year + 1900;
 
 using namespace std;
 
@@ -54,7 +55,7 @@ void writeVectorToSaveFile(vector<Assignment> v)
     for(int i = 0; i < v.size(); i++)
     {
         Assignment temp = v[i];
-        saveFile << temp.getCourse() << "\n" << temp.getDescription() << "\n" << temp.getDay()<< "\n" << temp.getMonth() << "\n" << temp.getCompletion() << "\n";
+        saveFile << temp.getCourse() << "\n" << temp.getDescription() << "\n" << temp.getDay()<< "\n" << temp.getMonth() << "\n" << temp.getYear() << "\n" << temp.getCompletion() << "\n";
     }
     saveFile.close();
 }
@@ -112,7 +113,7 @@ void searchMenu()
 void mainMenu()
 {
     int choice = -1;
-    cout << "Todays date: " << month << "/" << day << endl;
+    cout << "Todays date: " << month << "/" << day << "/" << year << endl;
     cout << "-=-=-HOMEWORK MANAGER-=-=-" << endl;
     cout << "1. Add Assignment" << endl;
     cout << "2. Edit Assignment" << endl;
@@ -195,6 +196,8 @@ int main() {
     //Read current save file into myVector
     ifstream saveFileRead;
     saveFileRead.open("savefile.dat");
+    if(saveFileRead)
+    {
     string course;
     while(getline(saveFileRead, course))
     {
@@ -204,18 +207,22 @@ int main() {
         getline(saveFileRead, day);
         string month;
         getline(saveFileRead, month);
+        string year;
+        getline(saveFileRead, year);
         string comp;
         getline(saveFileRead, comp);
         int Day = stoi(day);
         int Month = stoi(month);
+        int Year = stoi(year);
         bool Comp = false;
         if(comp == "1")
         {
             Comp = true;
         }
-        Assignment temp(course, desc, Day, Month, 0, Comp);
+        Assignment temp(course, desc, Day, Year, Month, 0, Comp);
         myVector.push_back(temp);
         
+    }
     }
     //Currently Test Code
     mainMenu();
