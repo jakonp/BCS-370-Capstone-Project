@@ -22,6 +22,7 @@ void displayVector(vector<Assignment> v)
     {
         Assignment temp = v[i];
         temp.displayAssignment();
+        cout << endl;
     }
 }
 
