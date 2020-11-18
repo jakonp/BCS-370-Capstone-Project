@@ -18,6 +18,15 @@ private:
     int month;
     int day;
 public:
+    Assignment()
+    {
+        course = "Unassigned";
+        description = "Unassigned";
+        month = 0;
+        day = 0;
+    }
+       
+    
     void addAssignment()
     {
         cout << "\nEnter Course: ";
@@ -82,6 +91,33 @@ public:
         cout << "Course: " << this->course << endl;
         cout << "Description: " << this->description << endl;
         cout << "Due: " << this->month << "/" << this->day << endl;
+    }
+    
+    string getCourse()
+    {
+        return course;
+    }
+    
+    string getDescription()
+    {
+        return description;
+    }
+    
+    int getMonth()
+    {
+        return month;
+    }
+    
+    int getDay()
+    {
+        return day;
+    }
+    
+    int getDaysUntilDue()
+    {
+        int daysUntilDue = 0;
+        //create code to find the value
+        return daysUntilDue;
     }
     
 };
