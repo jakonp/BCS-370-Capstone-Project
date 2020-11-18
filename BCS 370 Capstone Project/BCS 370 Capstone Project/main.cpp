@@ -33,7 +33,7 @@ void mainMenu()
 {
     int choice;
     cout << "-=-=-HOMEWORK MANAGER-=-=-" << endl;
-    cout << "1. Add Assignmet" << endl;
+    cout << "1. Add Assignment" << endl;
     cout << "2. Edit Assignment" << endl;
     cout << "3. View All Assignments" << endl;
     cout << "4. Remove Assignment" << endl;
