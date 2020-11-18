@@ -26,6 +26,15 @@ void displayVector(vector<Assignment> v)
         cout << endl;
     }
 }
+void clearScreen()
+{
+    for(int i = 0; i <=50; i++)
+    {
+        cout << "\n";
+    }
+}
+
+
 
 vector<Assignment> myVector;
 
@@ -48,6 +57,7 @@ void mainMenu()
             Assignment temp;
             temp.addAssignment();
             myVector.push_back(temp);
+            clearScreen();
             mainMenu();
             break;
         }
@@ -60,17 +70,27 @@ void mainMenu()
             Assignment temp = myVector[assignmentNum-1];
             temp.updateAssignment();
             myVector[assignmentNum-1] = temp;
+            clearScreen();
             mainMenu();
             break;
         }
         case 3:
         {
+            clearScreen();
             displayVector(myVector);
+            int press;
+            int go = 1;
+            cout << "Type any character and hit enter...";
+            cin >> press;
+            if(go == 1)
+            {
             mainMenu();
+            }
             break;
         }
         case 4:
         {
+            clearScreen();
             displayVector(myVector);
             cout << "Select Assignment to remove: ";
             int assignmentNum;
