@@ -16,6 +16,9 @@
 
 
 using namespace std;
+
+vector<Assignment> myVector;
+
 //Extra Funtions
 void displayVector(vector<Assignment> v)
 {
@@ -47,8 +50,55 @@ void writeVectorToSaveFile(vector<Assignment> v)
     saveFile.close();
 }
 
+void searchByCourse(vector<Assignment> v)
+{
+    cout << "Enter course name: ";
+    string name;
+    cin >> name;
+    for(int i = 0; i < v.size(); i++)
+    {
+        
+        Assignment temp = v[i];
+        if(temp.getCourse()==name)
+        {
+        cout << "Assignment #" << i+1 << endl;
+        temp.displayAssignment();
+        cout << endl;
+        }
+    }
+}
 
-vector<Assignment> myVector;
+void searchByDueDate()
+{
+    
+}
+
+void searchMenu()
+{
+    cout << "1. Search by course" << endl << "2. Search by due date" << endl << "3. Main Menu" << endl;
+    int choice = -1;
+    cin >> choice;
+    switch(choice)
+    {
+        case 1:
+        {
+            clearScreen();
+            searchByCourse(myVector);
+            break;
+        }
+        case 2:
+        {
+            //search by due date
+        }
+        case 3:
+        {
+            break;
+        }
+    }
+    
+}
+
+
 
 void mainMenu()
 {
@@ -110,6 +160,8 @@ void mainMenu()
         }
         case 5:
         {
+            clearScreen();
+            searchMenu();
             break;
         }
         case 6:
