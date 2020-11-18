@@ -143,5 +143,9 @@ public:
         return daysUntilDue;
     }
     
+    bool getCompletion()
+    {
+        return complete;
+    }
     
 };

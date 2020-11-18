@@ -42,25 +42,17 @@ void writeVectorToSaveFile(vector<Assignment> v)
     for(int i = 0; i < v.size(); i++)
     {
         Assignment temp = v[i];
-        saveFile << temp.getCourse() << "\n" << temp.getDescription() << "\n" << temp.getDay()<< "\n" << temp.getMonth() << "\n";
+        saveFile << temp.getCourse() << "\n" << temp.getDescription() << "\n" << temp.getDay()<< "\n" << temp.getMonth() << "\n" << temp.getCompletion() << "\n";
     }
     saveFile.close();
 }
-
-void readSaveFiletoVector(vector<Assignment> v)
-{
-    //write code that reads the save file into a vector and run it first this in main
-}
-
-
-
 
 
 vector<Assignment> myVector;
 
 void mainMenu()
 {
-    int choice;
+    int choice = -1;
     cout << "-=-=-HOMEWORK MANAGER-=-=-" << endl;
     cout << "1. Add Assignment" << endl;
     cout << "2. Edit Assignment" << endl;
@@ -100,13 +92,9 @@ void mainMenu()
             clearScreen();
             displayVector(myVector);
             int press;
-            int go = 1;
             cout << "Type any character and hit enter...";
             cin >> press;
-            if(go == 1)
-            {
             mainMenu();
-            }
             break;
         }
         case 4:
@@ -139,8 +127,32 @@ void mainMenu()
 
 
 int main() {
-    ofstream myFile;
-    myFile.open("savefile.dat");
+    
+    //Read current save file into myVector
+    ifstream saveFileRead;
+    saveFileRead.open("savefile.dat");
+    string course;
+    while(getline(saveFileRead, course))
+    {
+        string desc;
+        getline(saveFileRead, desc);
+        string day;
+        getline(saveFileRead, day);
+        string month;
+        getline(saveFileRead, month);
+        string comp;
+        getline(saveFileRead, comp);
+        int Day = stoi(day);
+        int Month = stoi(month);
+        bool Comp = false;
+        if(comp == "1")
+        {
+            Comp = true;
+        }
+        Assignment temp(course, desc, Day, Month, 0, Comp);
+        myVector.push_back(temp);
+        
+    }
     //Currently Test Code
     mainMenu();
  
