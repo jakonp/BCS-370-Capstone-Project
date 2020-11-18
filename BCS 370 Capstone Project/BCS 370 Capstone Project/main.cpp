@@ -10,14 +10,23 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <time.h>
 
 #include "Assignment.cpp"
 
+time_t theTime = time(NULL);
+struct tm *aTime = localtime(&theTime);
 
+int day = aTime->tm_mday;
+int month = aTime->tm_mon + 1;
 
 using namespace std;
 
 vector<Assignment> myVector;
+
+
+
+
 
 //Extra Funtions
 void displayVector(vector<Assignment> v)
@@ -103,6 +112,7 @@ void searchMenu()
 void mainMenu()
 {
     int choice = -1;
+    cout << "Todays date: " << month << "/" << day << endl;
     cout << "-=-=-HOMEWORK MANAGER-=-=-" << endl;
     cout << "1. Add Assignment" << endl;
     cout << "2. Edit Assignment" << endl;
@@ -154,7 +164,7 @@ void mainMenu()
             cout << "Select Assignment to remove: ";
             int assignmentNum;
             cin >> assignmentNum;
-            myVector.erase(myVector.begin()-1);
+            myVector.erase(myVector.begin()+assignmentNum-1);
             mainMenu();
             break;
         }
@@ -179,6 +189,8 @@ void mainMenu()
 
 
 int main() {
+    
+    
     
     //Read current save file into myVector
     ifstream saveFileRead;
