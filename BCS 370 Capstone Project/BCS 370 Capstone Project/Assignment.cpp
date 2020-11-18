@@ -56,7 +56,7 @@ public:
     {
         int choice;
         cout << "What would you like to change?";
-        cout << "\n1. Course\n2. Description\n3. Month Due\n4. Day Due\n5. Exit" << endl;
+        cout << "\n1. Course\n2. Description\n3. Month Due\n4. Day Due\n5. Update Completion\n6. Exit" << endl;
         cin >> choice;
         switch(choice)
         {
@@ -93,6 +93,21 @@ public:
                 break;
             }
             case 5:
+            {
+                cout << "Has this assignment been completed?: \n1. YES\n2. NO\n";
+                int choice;
+                cin >> choice;
+                if(choice == 1)
+                {
+                    this->complete = true;
+                }
+                else
+                {
+                    this->complete = false;
+                }
+                break;
+            }
+            case 6:
             {
                 break;
             }
