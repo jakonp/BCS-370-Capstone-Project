@@ -12,12 +12,12 @@ using namespace std;
 
 class Assignment
 {
-public:
+private:
     string course;
     string description;
     int month;
     int day;
-private:
+public:
     void addAssignment()
     {
         cout << "\nEnter Course: ";
@@ -75,6 +75,13 @@ private:
             }
             
         }
+    }
+    
+    void displayAssignment()
+    {
+        cout << "Course: " << this->course << endl;
+        cout << "Description: " << this->description << endl;
+        cout << "Due: " << this->month << "/" << this->day << endl;
     }
     
 };

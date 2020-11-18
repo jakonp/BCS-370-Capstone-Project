@@ -11,9 +11,19 @@
 #include <string>
 #include <stack>
 
+#include "class.cpp"
+
 using namespace std;
+
+
 
 int main() {
     //insert code here
+    
+    
+    //test code to see if class Assignment works
+    Assignment math;
+    math.addAssignment();
+    math.displayAssignment();
    
 }
