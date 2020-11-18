@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "Assignment.cpp"
 
@@ -34,6 +35,19 @@ void clearScreen()
     }
 }
 
+void writeVectorToSaveFile(vector<Assignment> v)
+{
+    ofstream saveFile;
+    saveFile.open("savefile.dat");
+    for(int i = 0; i < v.size(); i++)
+    {
+        Assignment temp = v[i];
+        saveFile << temp.getCourse() << "\n" << temp.getDescription() << "\n" << temp.getDay()<< "\n" << temp.getMonth() << "\n";
+    }
+}
+
+
+
 
 
 vector<Assignment> myVector;
@@ -47,7 +61,8 @@ void mainMenu()
     cout << "3. View All Assignments" << endl;
     cout << "4. Remove Assignment" << endl;
     cout << "5. Search Assignment" << endl;
-    cout << "6. QUIT" << endl;
+    cout << "6. Save to file" << endl;
+    cout << "7. QUIT" << endl;
     cin >> choice;
     
     switch(choice)
@@ -99,6 +114,17 @@ void mainMenu()
             mainMenu();
             break;
         }
+        case 5:
+        {
+            break;
+        }
+        case 6:
+        {
+            
+            writeVectorToSaveFile(myVector);
+            mainMenu();
+            break;
+        }
     }
     
     
@@ -107,7 +133,8 @@ void mainMenu()
 
 
 int main() {
-    
+    ofstream myFile;
+    myFile.open("savefile.dat");
     //Currently Test Code
     mainMenu();
  
