@@ -219,7 +219,7 @@ int main() {
         {
             Comp = true;
         }
-        Assignment temp(course, desc, Day, Year, Month, 0, Comp);
+        Assignment temp(course, desc, Day, Month, Year, 0, Comp);
         myVector.push_back(temp);
         
     }

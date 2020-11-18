@@ -140,7 +140,7 @@ public:
     {
         cout << "Course: " << this->course << endl;
         cout << "Description: " << this->description << endl;
-        cout << "Due: " << this->month << "/" << this->day << endl;
+        cout << "Due: " << this->month << "/" << this->day << "/" << this->year << endl;
         cout << "Completion: ";
         if(complete == true)
         {
