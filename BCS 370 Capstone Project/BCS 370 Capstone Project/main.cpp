@@ -44,6 +44,12 @@ void writeVectorToSaveFile(vector<Assignment> v)
         Assignment temp = v[i];
         saveFile << temp.getCourse() << "\n" << temp.getDescription() << "\n" << temp.getDay()<< "\n" << temp.getMonth() << "\n";
     }
+    saveFile.close();
+}
+
+void readSaveFiletoVector(vector<Assignment> v)
+{
+    //write code that reads the save file into a vector and run it first this in main
 }
 
 
