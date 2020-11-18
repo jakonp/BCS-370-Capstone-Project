@@ -25,5 +25,8 @@ int main() {
     Assignment math;
     math.addAssignment();
     math.displayAssignment();
+    
+    math.updateAssignment();
+    math.displayAssignment();
    
 }

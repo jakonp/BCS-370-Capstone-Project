@@ -33,7 +33,7 @@ public:
     {
         int choice;
         cout << "What would you like to change?";
-        cout << "\n1. Course\n2. Description\n3. Month Due\n4.Day Due\n5. Exit";
+        cout << "\n1. Course\n2. Description\n3. Month Due\n4. Day Due\n5. Exit" << endl;
         cin >> choice;
         switch(choice)
         {
