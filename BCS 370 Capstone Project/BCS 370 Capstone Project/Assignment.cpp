@@ -18,6 +18,7 @@ private:
     int month;
     int day;
     int daysUntil = this->getDaysUntilDue();
+    bool complete;
 public:
     Assignment()
     {
@@ -26,14 +27,16 @@ public:
         month = 0;
         day = 0;
         daysUntil = 0;
+        complete = false;
     }
-    Assignment(string c, string d, int m, int D, int dD)
+    Assignment(string c, string d, int m, int D, int dD, bool comp)
     {
         this->course = c;
         this->description = d;
         this->month = m;
         this->day = D;
         this->daysUntil = dD;
+        this->complete = comp;
     }
        
     
@@ -101,6 +104,15 @@ public:
         cout << "Course: " << this->course << endl;
         cout << "Description: " << this->description << endl;
         cout << "Due: " << this->month << "/" << this->day << endl;
+        cout << "Completion: ";
+        if(complete == true)
+        {
+            cout<< "Complete" << endl;
+        }
+        else
+        {
+            cout << "In Progress" << endl;
+        }
     }
     
     string getCourse()
