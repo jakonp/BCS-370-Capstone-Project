@@ -17,6 +17,7 @@ private:
     string description;
     int month;
     int day;
+    int daysUntil = this->getDaysUntilDue();
 public:
     Assignment()
     {
@@ -24,6 +25,7 @@ public:
         description = "Unassigned";
         month = 0;
         day = 0;
+        daysUntil = 0;
     }
        
     
