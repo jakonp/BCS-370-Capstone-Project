@@ -15,7 +15,7 @@
 
 #include "Assignment.cpp"
 
-
+void mainMenu();
 time_t theTime = time(NULL);
 struct tm *aTime = localtime(&theTime);
 
@@ -87,6 +87,11 @@ void searchByCourse(vector<Assignment> v)
         cout << endl;
         }
     }
+    int press;
+    cout << "Type any character and hit enter...";
+    cin >> press;
+    clearScreen();
+    mainMenu();
 }
 
 void searchByCompletion(vector<Assignment> v)
@@ -102,12 +107,18 @@ void searchByCompletion(vector<Assignment> v)
         cout << endl;
         }
     }
+    int press;
+    cout << "Type any character and hit enter...";
+    cin >> press;
+    clearScreen();
+    mainMenu();
 }
 
 
 
 void searchByDueDate(vector<Assignment> v)
 {
+    clearScreen();
     cout << "Days until due: ";
     int daysUntilDue;
     cin >> daysUntilDue;
@@ -122,6 +133,11 @@ void searchByDueDate(vector<Assignment> v)
         cout << endl;
         }
     }
+    int press;
+    cout << "Type any character and hit enter...";
+    cin >> press;
+    clearScreen();
+    mainMenu();
 }
 
 
@@ -147,11 +163,14 @@ void searchMenu()
         }
         case 3:
         {
+            clearScreen();
             searchByCompletion(myVector);
             break;
         }
         case 4:
         {
+            clearScreen();
+            mainMenu();
             break;
         }
     }
@@ -178,6 +197,7 @@ void mainMenu()
     {
         case 1:
         {
+            clearScreen();
             Assignment temp;
             temp.addAssignment();
             int dayDue = temp.getDay();
@@ -192,6 +212,7 @@ void mainMenu()
         }
         case 2:
         {
+            clearScreen();
             displayVector(myVector);
             cout << "Select Assignment to edit: ";
             int assignmentNum;
@@ -215,6 +236,7 @@ void mainMenu()
             int press;
             cout << "Type any character and hit enter...";
             cin >> press;
+            clearScreen();
             mainMenu();
             break;
         }
@@ -226,6 +248,7 @@ void mainMenu()
             int assignmentNum;
             cin >> assignmentNum;
             myVector.erase(myVector.begin()+assignmentNum-1);
+            clearScreen();
             mainMenu();
             break;
         }
@@ -237,7 +260,7 @@ void mainMenu()
         }
         case 6:
         {
-            
+            clearScreen();
             writeVectorToSaveFile(myVector);
             mainMenu();
             break;

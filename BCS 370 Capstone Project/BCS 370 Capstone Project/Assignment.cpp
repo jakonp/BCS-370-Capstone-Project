@@ -33,7 +33,7 @@ public:
         daysUntil = 0;
         complete = false;
     }
-    Assignment(string c, string d, int m, int D, int y, int dD, bool comp)
+    Assignment(string c, string d, int D, int m, int y, int dD, bool comp)
     {
         this->course = c;
         this->description = d;
