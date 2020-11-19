@@ -12,6 +12,8 @@
 using namespace std;
 
 
+
+
 struct date
 {
     int d,m,y;
@@ -27,7 +29,7 @@ private:
     int month;
     int day;
     int year;
-    int daysUntil = this->getDaysUntilDue();
+    int daysUntil;
     bool complete;
 public:
     Assignment()
@@ -150,6 +152,12 @@ public:
         {
             cout << "In Progress" << endl;
         }
+        cout << "Days until due: " << this->daysUntil << endl;
+    }
+    
+    void setDaysUntilDue(int d)
+    {
+        this->daysUntil = d;
     }
     
     string getCourse()
@@ -172,12 +180,6 @@ public:
         return day;
     }
     
-    int getDaysUntilDue()
-    {
-        int daysUntilDue = 0;
-        //create code to find the value
-        return daysUntilDue;
-    }
     
     bool getCompletion()
     {

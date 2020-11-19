@@ -12,7 +12,9 @@
 #include <fstream>
 #include <time.h>
 
+#include "time.cpp"
 #include "Assignment.cpp"
+
 
 time_t theTime = time(NULL);
 struct tm *aTime = localtime(&theTime);
@@ -21,6 +23,18 @@ int day = aTime->tm_mday;
 int month = aTime->tm_mon + 1;
 int year = aTime->tm_year + 1900;
 
+int calculateDaysUntilDue(int d, int m, int y)
+{
+
+    
+    struct tm endtm = {0, 0, 0, d, m-1, y - 1900};
+    
+    time_t end = mktime(&endtm);
+    
+    
+    int daysUntil =  abs(end - theTime) / 86400;
+    return daysUntil;
+}
 using namespace std;
 
 vector<Assignment> myVector;
@@ -75,10 +89,14 @@ void searchByCourse(vector<Assignment> v)
     }
 }
 
+
+
 void searchByDueDate()
 {
     
 }
+
+
 
 void searchMenu()
 {
@@ -127,6 +145,11 @@ void mainMenu()
         {
             Assignment temp;
             temp.addAssignment();
+            int dayDue = temp.getDay();
+            int monthDue = temp.getMonth();
+            int yearDue = temp.getYear();
+            int daysUntil = calculateDaysUntilDue(dayDue, monthDue, yearDue);
+            temp.setDaysUntilDue(daysUntil);
             myVector.push_back(temp);
             clearScreen();
             mainMenu();
@@ -214,7 +237,8 @@ int main() {
         {
             Comp = true;
         }
-        Assignment temp(course, desc, Day, Month, Year, 0, Comp);
+        int daysUNTIL = calculateDaysUntilDue(Day, Month, Year);
+        Assignment temp(course, desc, Day, Month, Year, daysUNTIL, Comp);
         myVector.push_back(temp);
         
     }
