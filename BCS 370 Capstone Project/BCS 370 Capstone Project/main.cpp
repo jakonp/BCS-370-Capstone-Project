@@ -91,9 +91,22 @@ void searchByCourse(vector<Assignment> v)
 
 
 
-void searchByDueDate()
+void searchByDueDate(vector<Assignment> v)
 {
-    
+    cout << "Days until due: ";
+    int daysUntilDue;
+    cin >> daysUntilDue;
+    for(int i = 0; i < v.size(); i++)
+    {
+        
+        Assignment temp = v[i];
+        if(temp.getDaysUntilDue()==daysUntilDue)
+        {
+        cout << "Assignment #" << i+1 << endl;
+        temp.displayAssignment();
+        cout << endl;
+        }
+    }
 }
 
 
@@ -113,7 +126,9 @@ void searchMenu()
         }
         case 2:
         {
-            //search by due date
+            clearScreen();
+            searchByDueDate(myVector);
+            break;
         }
         case 3:
         {

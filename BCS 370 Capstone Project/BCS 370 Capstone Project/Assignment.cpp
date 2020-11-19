@@ -191,4 +191,9 @@ public:
         return year;
     }
     
+    int getDaysUntilDue()
+    {
+        return daysUntil;
+    }
+    
 };
