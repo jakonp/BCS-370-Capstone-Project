@@ -26,9 +26,6 @@ using namespace std;
 vector<Assignment> myVector;
 
 
-
-
-
 //Extra Funtions
 void displayVector(vector<Assignment> v)
 {
