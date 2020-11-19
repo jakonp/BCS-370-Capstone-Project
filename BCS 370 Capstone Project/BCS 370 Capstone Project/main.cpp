@@ -198,6 +198,11 @@ void mainMenu()
             cin >> assignmentNum;
             Assignment temp = myVector[assignmentNum-1];
             temp.updateAssignment();
+            int dayDue = temp.getDay();
+            int monthDue = temp.getMonth();
+            int yearDue = temp.getYear();
+            int daysUntil = calculateDaysUntilDue(dayDue, monthDue, yearDue);
+            temp.setDaysUntilDue(daysUntil);
             myVector[assignmentNum-1] = temp;
             clearScreen();
             mainMenu();

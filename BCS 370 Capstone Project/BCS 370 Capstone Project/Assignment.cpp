@@ -12,15 +12,6 @@
 using namespace std;
 
 
-
-
-struct date
-{
-    int d,m,y;
-    
-};
-
-
 class Assignment
 {
 private:
