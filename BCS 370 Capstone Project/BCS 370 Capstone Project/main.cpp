@@ -12,7 +12,7 @@
 #include <fstream>
 #include <time.h>
 
-#include "time.cpp"
+
 #include "Assignment.cpp"
 
 
@@ -89,6 +89,21 @@ void searchByCourse(vector<Assignment> v)
     }
 }
 
+void searchByCompletion(vector<Assignment> v)
+{
+    for(int i = 0; i < v.size(); i++)
+    {
+        
+        Assignment temp = v[i];
+        if(temp.getCompletion()==false)
+        {
+        cout << "Assignment #" << i+1 << endl;
+        temp.displayAssignment();
+        cout << endl;
+        }
+    }
+}
+
 
 
 void searchByDueDate(vector<Assignment> v)
@@ -113,7 +128,7 @@ void searchByDueDate(vector<Assignment> v)
 
 void searchMenu()
 {
-    cout << "1. Search by course" << endl << "2. Search by due date" << endl << "3. Main Menu" << endl;
+    cout << "1. Search by course" << endl << "2. Search by due date" << endl << "3. In Progress" << endl << "4. Main Menu" << endl;
     int choice = -1;
     cin >> choice;
     switch(choice)
@@ -131,6 +146,11 @@ void searchMenu()
             break;
         }
         case 3:
+        {
+            searchByCompletion(myVector);
+            break;
+        }
+        case 4:
         {
             break;
         }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		017EA7122566F27A007C079B /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017EA7112566F27A007C079B /* time.cpp */; };
 		0191D10925646944005DF62A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0191D10825646944005DF62A /* main.cpp */; };
 		01D3C1CD25649DBD005C5B06 /* Assignment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D3C1CB25649DBD005C5B06 /* Assignment.cpp */; };
 /* End PBXBuildFile section */
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		010491112565E1190077D07D /* savefile.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = savefile.dat; sourceTree = "<group>"; };
-		017EA7112566F27A007C079B /* time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = time.cpp; sourceTree = "<group>"; };
 		0191D10525646944005DF62A /* BCS 370 Capstone Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "BCS 370 Capstone Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0191D10825646944005DF62A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		01D3C1CB25649DBD005C5B06 /* Assignment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Assignment.cpp; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				010491112565E1190077D07D /* savefile.dat */,
 				0191D10825646944005DF62A /* main.cpp */,
 				01D3C1CB25649DBD005C5B06 /* Assignment.cpp */,
-				017EA7112566F27A007C079B /* time.cpp */,
 			);
 			path = "BCS 370 Capstone Project";
 			sourceTree = "<group>";
@@ -128,7 +125,6 @@
 			files = (
 				01D3C1CD25649DBD005C5B06 /* Assignment.cpp in Sources */,
 				0191D10925646944005DF62A /* main.cpp in Sources */,
-				017EA7122566F27A007C079B /* time.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
