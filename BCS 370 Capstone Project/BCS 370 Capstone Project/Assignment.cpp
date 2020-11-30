@@ -5,6 +5,8 @@
 //  Created by Nick Jakobczyk on 11/17/20.
 //
 
+//The date is entered in four different spots. under addAssignment and updateAssignment
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -47,6 +49,9 @@ public:
     
     void addAssignment()
     {
+        
+        //This is where the date is entered
+        
         cout << "\nEnter Course: ";
         cin >> this->course;
         cout << "\nEnter Description: ";
@@ -84,6 +89,7 @@ public:
             }
             case 3:
             {
+                //Month entered here
                 cout << "What is the new month due?: ";
                 int newMonth;
                 cin >> newMonth;
@@ -92,6 +98,7 @@ public:
             }
             case 4:
             {
+                //Day is entered here
                 cout << "What is the new day due?: ";
                 int newDay;
                 cin >> newDay;
@@ -100,6 +107,7 @@ public:
             }
             case 5:
             {
+                //year is entered here
                 cout << "What is the new year due?: ";
                 int newYear;
                 cin >> newYear;
