@@ -88,12 +88,12 @@ public:
         // this is where each month is checked for how many days are in that month
         // to check to see if the entered date is a valid date
         // this checks every month with 31 days in it to see if the entered date is greater then 31
-        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 && day > 31 )
+        if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31 )
         {
             cout << "\nPlease enter a valid date 1-31";
             goto LOOP2;
         }
-        else if (month == 4 || month == 6 || month == 9 || month == 11 && day > 30)
+        else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
         {
             cout << "\nPlease enter a valid date 1-30";
             goto LOOP2;
