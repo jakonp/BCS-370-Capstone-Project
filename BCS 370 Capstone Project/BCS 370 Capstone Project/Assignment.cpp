@@ -46,7 +46,7 @@ public:
         this->complete = comp;
     }
        
-    
+    /* nick i commented out the old void addAssignment() and below it i added the one i worked on
     void addAssignment()
     {
         
@@ -63,6 +63,50 @@ public:
         cout << "\nEnter the year due: ";
         cin >> this->year;
     }
+    */
+    void addAssignment()
+{
+        //This is where the date is entered
+        cout << "\nEnter Course: ";
+        cin >> this->course;
+        cout << "\nEnter Description: ";
+        cin >> this->description;
+        
+        LOOP1: 
+        cout << "\nEnter month due: ";
+        cin >> this->month;
+        // this is the aspect that checks the entered month to see if it is 1-12
+        if(month > 12){
+            cout << "\nPlease enter a valid month 1-12";
+            // if the entered month is greater then 12 it sends you back to LOOP1
+            // so you can re-enter the month
+            goto LOOP1;
+        }
+        LOOP2:
+        cout << "\nEnter day due: ";
+        cin >> this->day;
+        // this is where each month is checked for how many days are in that month
+        // to check to see if the entered date is a valid date
+        // this checks every month with 31 days in it to see if the entered date is greater then 31
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 && day > 31 )
+        {
+            cout << "\nPlease enter a valid date 1-31";
+            goto LOOP2;
+        }
+        else if (month == 4 || month == 6 || month == 9 || month == 11 && day > 30)
+        {
+            cout << "\nPlease enter a valid date 1-30";
+            goto LOOP2;
+        }
+        else if(month == 2 && day > 29)
+        {
+            cout << "\nPlease enter a valid date 1-29";
+            goto LOOP2;
+        }
+        cout << "\nEnter the year due: ";
+        cin >> this->year;
+    }
+    
     void updateAssignment()
     {
         int choice;
