@@ -136,18 +136,42 @@ public:
             case 3:
             {
                 //Month entered here
+                LOOP1:
                 cout << "What is the new month due?: ";
                 int newMonth;
                 cin >> newMonth;
+                if(newMonth > 12){
+                cout << "\nPlease enter a valid month 1-12";
+                // if the entered month is greater then 12 it sends you back to LOOP1
+                // so you can re-enter the month
+                goto LOOP1;
+                }
                 this->month = newMonth;
                 break;
             }
             case 4:
             {
                 //Day is entered here
+                LOOP2:
                 cout << "What is the new day due?: ";
                 int newDay;
                 cin >> newDay;
+                if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && newDay > 31 )
+        {
+            cout << "\nPlease enter a valid date 1-31";
+            goto LOOP2;
+        }
+        else if ((month == 4 || month == 6 || month == 9 || month == 11) && newDay > 30)
+        {
+            cout << "\nPlease enter a valid date 1-30";
+            goto LOOP2;
+        }
+        else if(month == 2 && newDay > 29)
+        {
+            cout << "\nPlease enter a valid date 1-29";
+            goto LOOP2;
+        }
+                
                 this->day = newDay;
                 break;
             }
