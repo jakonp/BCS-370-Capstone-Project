@@ -64,6 +64,8 @@ public:
         cin >> this->year;
     }
     */
+    
+    //Kiernan
     void addAssignment()
 {
         //This is where the date is entered
@@ -106,7 +108,7 @@ public:
         cout << "\nEnter the year due: ";
         cin >> this->year;
     }
-    
+    //Kiernan
     void updateAssignment()
     {
         int choice;
@@ -180,7 +182,7 @@ public:
             
         }
     }
-    
+    //Nick
     void displayAssignment()
     {
         cout << "Course: " << this->course << endl;

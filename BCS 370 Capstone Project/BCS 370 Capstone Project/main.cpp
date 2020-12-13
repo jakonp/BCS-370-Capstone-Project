@@ -3,7 +3,6 @@
  Capstone Project
  Nicholas Jakobczyk
  Kiernan Kolano
- Charles Corbett
  */
 
 #include <iostream>
@@ -15,6 +14,7 @@
 
 #include "Assignment.cpp"
 
+//Nick
 void mainMenu();
 time_t theTime = time(NULL);
 struct tm *aTime = localtime(&theTime);
@@ -23,6 +23,7 @@ int day = aTime->tm_mday;
 int month = aTime->tm_mon + 1;
 int year = aTime->tm_year + 1900;
 
+//Nick
 int calculateDaysUntilDue(int d, int m, int y)
 {
 
@@ -41,6 +42,8 @@ vector<Assignment> myVector;
 
 
 //Extra Funtions
+
+//Nick
 void displayVector(vector<Assignment> v)
 {
     for(int i = 0; i < v.size(); i++)
@@ -59,6 +62,8 @@ void clearScreen()
     }
 }
 
+
+//Kiernan
 void writeVectorToSaveFile(vector<Assignment> v)
 {
     ofstream saveFile;
@@ -71,6 +76,7 @@ void writeVectorToSaveFile(vector<Assignment> v)
     saveFile.close();
 }
 
+//Nick
 void searchByCourse(vector<Assignment> v)
 {
     cout << "Enter course name: ";
@@ -94,6 +100,7 @@ void searchByCourse(vector<Assignment> v)
     mainMenu();
 }
 
+//Kiernan
 void searchByCompletion(vector<Assignment> v)
 {
     for(int i = 0; i < v.size(); i++)
@@ -115,7 +122,7 @@ void searchByCompletion(vector<Assignment> v)
 }
 
 
-
+//Nick
 void searchByDueDate(vector<Assignment> v)
 {
     clearScreen();
@@ -141,7 +148,7 @@ void searchByDueDate(vector<Assignment> v)
 }
 
 
-
+//Kiernan
 void searchMenu()
 {
     cout << "1. Search by course" << endl << "2. Search by due date" << endl << "3. In Progress" << endl << "4. Main Menu" << endl;
@@ -178,7 +185,7 @@ void searchMenu()
 }
 
 
-
+//Nick
 void mainMenu()
 {
     int choice = -1;
